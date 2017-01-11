@@ -14,8 +14,8 @@ function Snake() {
     this.x = this.x + this.xspeed * SnakeSize;
     this.y = this.y + this.yspeed * SnakeSize;
     // constrains the x and y values of snake inside the canvas
-    this.x = constrain(this.x, 0, width - SnakeSize);
-    this.y = constrain(this.y, 0, height - SnakeSize);
+    // this.x = constrain(this.x, 0, width - SnakeSize);
+    // this.y = constrain(this.y, 0, height - SnakeSize);
 
     if (this.total === this.tail.length){
       for (var i = 0; i < this.tail.length - 1; i++) {
@@ -53,7 +53,7 @@ function Snake() {
   }
 
  this.GameOver = function() {
-   if (this.x === 0 || this.x === width || this.y === 0 || this. y === height) {
+   if (this.x < 0 || this.x > 600 || this.y < 0 || this.x > 600) {
      snake.total = 1;
      snake.tail = [];
      score.innerHTML = "Score: 0";
